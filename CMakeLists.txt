@@ -4,7 +4,7 @@ project(spaceinvader)
 set(VERSION 0.0.0)
 set(LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -13,6 +13,10 @@ find_package(Boost 1.80 REQUIRED COMPONENTS
   log
   log_setup
 )
+
+find_package(SDL2 REQUIRED)
+find_package(SDL2_image REQUIRED)
+find_package(SDL2_ttf REQUIRED)
 
 include_directories("${Boost_INCLUDE_DIRS}")
 include_directories(${PROJECT_SOURCE_DIR}/include)
