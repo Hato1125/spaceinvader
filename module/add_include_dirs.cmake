@@ -1,0 +1,8 @@
+macro(add_include_dirs target_name access path)
+  file(GLOB SUBDIRECTORIES LIST_DIRECTORIES ON ${path})
+  foreach(DIRECTORY ${SUBDIRECTORIES})
+    if(IS_DIRECTORY ${DIRECTORY})
+      target_include_directories(${target_name} ${access} ${DIRECTORY})
+    endif()
+  endforeach()
+endmacro()

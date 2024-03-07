@@ -1,0 +1,7 @@
+.cache
+.vscode.
+.vs
+out/
+build/
+.DS_Store
+Icon?
