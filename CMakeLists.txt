@@ -26,6 +26,8 @@ link_directories("${Boost_LIBRARY_DIR}")
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/module)
 include(add_sources)
 include(add_include_dirs)
+include(copy_directory)
+
 
 if(CMAKE_BUILD_TYPE STREQUAL "Release")
   add_compile_options(-O1)
@@ -34,3 +36,8 @@ else()
   add_compile_options(-O0)
   add_subdirectory(src)
 endif()
+
+copy_directory(
+  ${PROJECT_SOURCE_DIR}/assets
+  ${CMAKE_CURRENT_BINARY_DIR}/src
+)
